@@ -18,10 +18,9 @@ class prototype extends Component {
         fetch("http://cluj-anunturi.ro/get/1", {method: "GET"})
         .then((response) => response.json())
         .then((responseData) => {
-            console.warn(responseData);
             Alert.alert(
                 "GET Response",
-                "Search Query3 -> " + responseData[0].username
+                "username: " + responseData[0].username + " and email: " + responseData[0].email
             )
         })
         .done();
@@ -38,7 +37,7 @@ class prototype extends Component {
                 </Text>
                 <TouchableNativeFeedback style={styles.button} onPress={this.onPressButtonGET}>
                     <View>
-                        <Text style={styles.buttonText}>Go!</Text>
+                        <Text style={styles.buttonText}>Click me!</Text>
                     </View>
                 </TouchableNativeFeedback>
             </View>
