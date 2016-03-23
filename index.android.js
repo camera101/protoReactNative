@@ -16,10 +16,12 @@ import React, {
 class prototype extends Component {
     onPressButtonGET() {
         fetch("http://cluj-anunturi.ro/get/1", {method: "GET"})
+        .then((response) => response.json())
         .then((responseData) => {
+            console.warn(responseData);
             Alert.alert(
                 "GET Response",
-                "Search Query -> " + responseData
+                "Search Query3 -> " + responseData[0].username
             )
         })
         .done();
